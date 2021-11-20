@@ -24,17 +24,9 @@
     "@mui/material": "^5.0.6",
     "axios": "^0.24.0",
     "cloudinary-react": "^1.7.0",
-    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "mongoose": "^6.0.12",
-    "podcast-api": "^1.1.1",
-    "react-cloudinary-upload-widget": "^1.4.3",
-<<<<<<< HEAD
-    "mongoose": "^6.0.12",
-    "express": "^4.17.1"
-=======
     "react-swipeable-views": "^0.14.0",
     "unirest": "^0.6.0"
->>>>>>> 9d10077eb4c1948cb377d462f096bf7d6f329247
   }
 }
