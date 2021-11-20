@@ -6,16 +6,11 @@ const Podcast = require("./Podcast");
 
 const userSchema = new Schema(
   {
-    firstName: {
+    username: {
       type: String,
       required: true,
-      trim: true,
-    },
-    lastName: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+      unique: true,
+    }
     email: {
       type: String,
       required: true,
@@ -28,11 +23,6 @@ const userSchema = new Schema(
       minlength: 5,
     },
     likedPodcasts: [Podcast.schema],
-
-    addedPodcast: {
-      type: Schema.Types.ObjectId,
-      ref: "Podcast",
-    },
   },
   {
     toJSON: {
