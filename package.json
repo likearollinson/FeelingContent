@@ -1,0 +1,40 @@
+{
+  "name": "pod_central",
+  "version": "1.0.0",
+  "description": "A collaboration hub for podcast creators and consumers",
+  "main": "server/server.js",
+  "homepage": "https://pod-central.herokuapp.com/",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/material": "^5.0.6",
+    "axios": "^0.24.0",
+    "cloudinary-react": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.12",
+    "podcast-api": "^1.1.1",
+    "react-cloudinary-upload-widget": "^1.4.3",
+<<<<<<< HEAD
+    "mongoose": "^6.0.12",
+    "express": "^4.17.1"
+=======
+    "react-swipeable-views": "^0.14.0",
+    "unirest": "^0.6.0"
+>>>>>>> 9d10077eb4c1948cb377d462f096bf7d6f329247
+  }
+}
