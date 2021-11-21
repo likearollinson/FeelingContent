@@ -65,7 +65,7 @@ const GlobalAppBar = () => {
     return isMatching
   }
 
-  const isDesktopResolution = useMatchMedia('(min-width:992px)', true)
+  const isDesktopResolution = useMatchMedia('(min-width:450px)', true)
   // if (Auth.loggedIn()) {
   return (
     <ThemeProvider theme={darkBar}>
