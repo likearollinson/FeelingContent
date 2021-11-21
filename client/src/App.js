@@ -23,18 +23,9 @@ import GlobalAppBar from "./components/GlobalAppBar";
 import Home from "./pages/Home";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Profile from "./pages/Profile";
-import Publish from "./pages/Publish";
-import PodCentralPodcast from "./pages/PodCentralPodcast";
-import Discover from "./pages/Discover";
-import Business from "./pages/Business";
-import Comedy from "./pages/Comedy";
-import Health from "./pages/Health";
-import NewsAndPolitics from "./pages/NewsAndPolitics";
-import PopCulture from "./pages/PopCulture";
-import TrueCrime from "./pages/TrueCrime";
-import AllCategories from "./pages/AllCategories";
+// import Signup from "./pages/Signup";
+// import Profile from "./pages/Profile";
+// import Publish from "./pages/Publish";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -74,35 +65,19 @@ function App() {
       <CssBaseline />
       <ApolloProvider client={client}>
         <Router>
-          <PodCentralProvider>
-            <GlobalAppBar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/discover" component={Discover} />
-              <Route exact path="/business" component={Business} />
-              <Route exact path="/comedy" component={Comedy} />
-              <Route exact path="/health" component={Health} />
-              <Route exact path="/signup" component={Signup} />
-              {Auth.loggedIn() ? (
+          <GlobalAppBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/admin" component={Login} />
+            {/* <Route exact path="/signup" component={Signup} /> */}
+            {/* {Auth.loggedIn() ? (
                 <Route exact path="/publish" component={Publish} />
               ) : (
                 <Redirect to="/login" />
-              )}
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/podcast/:_id" component={PodCentralPodcast} />
-              <Route
-                exact
-                path="/newsAndPolitics"
-                component={NewsAndPolitics}
-              />
-              <Route exact path="/popCulture" component={PopCulture} />
-              <Route exact path="/trueCrime" component={TrueCrime} />
-              <Route exact path="/allCategories" component={AllCategories} />
-              <Route component={NoMatch} />
-              <cloudinaryWidget />
-            </Switch>
-          </PodCentralProvider>
+              )} */}
+            {/* <Route exact path="/profile" component={Profile} /> */}
+            <Route component={NoMatch} />
+          </Switch>
         </Router>
       </ApolloProvider>
     </ThemeProvider>
