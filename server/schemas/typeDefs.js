@@ -5,17 +5,17 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    addedPodcast: Podcast
-    likedPodcasts: [Podcast]
-    comments: [Comment]
   }
 
   type Episode {
     _id: ID
     title: String
     description: String
-    audio: String
-    season: Int
+    michaelWYF: String
+    bradWYF: String
+    bradArt: String
+    michaelArt: String
+    widget: String
     episode: Int
     comments: [Comment]
   }
@@ -30,12 +30,6 @@ const typeDefs = gql`
   type Auth {
     token: ID
     user: User
-  }
-
-  input podcastInput {
-    title: String!
-    description: String!
-    image: String
   }
 
   input episodeInput {

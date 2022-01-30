@@ -11,14 +11,20 @@ const episodeSchema = new Schema({
     type: String,
     required: true,
   },
-  audio: {
+  michaelWYF: {
     type: String,
   },
-  duration: {
-    type: Number,
+  bradWYF: {
+    type: String,
   },
-  season: {
-    type: Number,
+  bradArt: {
+    type: String,
+  },
+  michaelArt: {
+    type: String,
+  },
+  widget: {
+    type: String,
   },
   episode: {
     type: Number,
