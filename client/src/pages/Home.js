@@ -22,7 +22,7 @@ const styles = {
 };
 
 
-export default function Home() {
+const Home = () => {
 
   return (
     <Box flexGrow={1}>
@@ -38,6 +38,7 @@ export default function Home() {
           pt={2}
           sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}
           align="center"
+          mt="66px"
         >
           Welcome to Feeling Content
         </Typography>
@@ -70,3 +71,5 @@ export default function Home() {
     </Box>
   );
 }
+
+export default Home;

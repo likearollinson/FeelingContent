@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
-const Podcast = require("./Podcast");
 
 const userSchema = new Schema(
   {
@@ -22,7 +21,6 @@ const userSchema = new Schema(
       required: true,
       minlength: 5,
     },
-    likedPodcasts: [Podcast.schema],
   },
   {
     toJSON: {

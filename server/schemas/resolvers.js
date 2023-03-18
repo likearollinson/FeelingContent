@@ -1,46 +1,38 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Podcast, Episode } = require("../models");
+const { User, Episode } = require("../models");
 const { signToken } = require("../utils/auth");
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
-    me: async (parent, args, context) => {
-      if (context.user) {
-        try {
-          const userData = await User.findOne({
-            _id: context.user._id,
-          })
-            .select("-__v-password")
-            .populate("addedPodcast")
-            .populate({
-              path: "addedPodcast",
-              populate: "episodes",
-            });
+    // me: async (parent, args, context) => {
+    //   if (context.user) {
+    //     try {
+    //       const userData = await User.findOne({
+    //         _id: context.user._id,
+    //       })
+    //         .select("-__v-password")
+    //         .populate({
+    //           path: "addedPodcast",
+    //           populate: "episodes",
+    //         });
 
-          return userData;
-        } catch (err) {
-          console.log(err);
-        }
-      }
-      throw new AuthenticationError("You need to be logged in!");
-    },
-    users: async () => {
-      return User.find().populate("addedPodcast").populate({
-        path: "addedPodcast",
-        populate: "episodes",
-      });
-    },
-    podcasts: async () => {
-      return await Podcast.find().populate("episodes");
-    },
+    //       return userData;
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   }
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
+    // episode: async () => {
+    //   return await Episode.find().getPopulatedPaths("episode");
+    // },
 
-    podcast: async (parent, args) => {
+    episode: async (parent, args) => {
       try {
-        const podcastData = await Podcast.findOne({
+        const episodeData = await Episode.findOne({
           _id: args._id,
-        }).populate("episodes");
-        return podcastData;
+        }).populate("episode");
+        return episodeData;
       } catch (err) {
         console.log(err);
       }
@@ -82,24 +74,6 @@ const resolvers = {
       return { token, user };
     },
 
-    addPodcast: async (parent, args, context) => {
-      if (context.user) {
-        try {
-          const newPodcast = await Podcast.create(args.input);
-          console.log(newPodcast);
-          // return newPodcast;
-
-          const updateUserPodcast = await User.findOneAndUpdate(
-            { _id: context.user._id },
-            { addedPodcast: newPodcast._id },
-            { new: true, runValidators: true }
-          );
-          // console.log(updateUserPodcast);
-        } catch (err) {
-          console.log(err);
-        }
-      }
-    },
     addEpisode: async (parent, args, context) => {
       if (context.user) {
         try {
@@ -107,55 +81,37 @@ const resolvers = {
           // console.log(context.user);
           const newEpisode = await Episode.create(args.input);
           // console.log(newEpisode);
-          const user = await User.findOne({ _id: context.user._id });
-          const updatePodcast = await Podcast.findOneAndUpdate(
-            { _id: user.addedPodcast },
+          // const user = await User.findOne({ _id: context.user._id });
+          const updateEpisode = await Episode.findOneAndUpdate(
+            { _id: user.addedEpisode },
             { $push: { episodes: newEpisode._id } },
             { new: true, runValidators: true }
           );
-          console.log(updatePodcast);
+          console.log(updateEpisode);
         } catch (err) {
           console.log(err);
         }
       }
     },
 
-    likePodcast: async (parent, args, context) => {
-      if (context.user) {
-        console.log(args.input);
-        console.log("user: ", context.user.firstName);
-        try {
-          const updateUser = await User.findOneAndUpdate(
-            { _id: context.user._id },
-            { $addToSet: { likedPodcasts: args.input } },
-            { new: true, runValidators: true }
-          );
+    // addComment: async (parent, args, context) => {
+    //   if (context.user) {
+    //     try {
+    //       const comment = await User.findByIdAndUpdate(
+    //         args.podcastId,
+    //         { $push: { comments: args.text } },
+    //         { new: true }
+    //       );
 
-          return updateUser;
-        } catch (err) {
-          console.log(err);
-        }
-      }
-      throw new AuthenticationError("Not logged in");
-    },
-
-    addComment: async (parent, args, context) => {
-      if (context.user) {
-        try {
-          const comment = await User.findByIdAndUpdate(
-            args.podcastId,
-            { $push: { comments: args.text } },
-            { new: true }
-          );
-
-          return comment;
-        } catch (err) {
-          console.log(err);
-        }
-      }
-      throw new AuthenticationError("Not logged in");
-    },
+    //       return comment;
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   }
+    //   throw new AuthenticationError("Not logged in");
+    // },
   },
 };
+
 
 module.exports = resolvers;

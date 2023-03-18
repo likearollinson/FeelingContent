@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import PropTypes from 'prop-types';
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/material/Menu";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
@@ -94,6 +95,7 @@ const GlobalAppBar = (props) => {
   }
 
   const isDesktopResolution = useMatchMedia('(min-width:450px)', true)
+  const isMobileResolution = useMatchMedia('(max-width:449px)', true)
   // if (Auth.loggedIn()) {
   return (
     <React.Fragment>
@@ -125,16 +127,39 @@ const GlobalAppBar = (props) => {
                     <img src={logo} alt='feeling content logo' style={styles.logo} />
                   </Grid>
                 )}
-                <Grid>
-                  <Button
-                    size="medium"
-                    component={Link}
-                    color="inherit"
-                    to="/episodes"
-                  >
-                    Episodes
-                  </Button>
-                </Grid>
+                {isDesktopResolution && (
+                  <Grid>
+                    <Button
+                      size="small"
+                      component={Link}
+                      color="inherit"
+                      to="/episodes"
+                    >
+                      Episodes
+                    </Button>
+                    <Button
+                      size="small"
+                      component={Link}
+                      color="inherit"
+                      to="/whatyafeelin"
+                    >
+                      What Ya Feelin'?
+                    </Button>
+                  </Grid>
+                )}
+                {isMobileResolution && (
+                  <Grid>
+                    <IconButton
+                      size="large"
+                      edge="start"
+                      color="error"
+                      aria-label="menu"
+                      sx={{ mr: 2 }}
+                    >
+                      <MenuIcon />
+                    </IconButton>
+                  </Grid>
+                )}
               </Grid>
             </Toolbar>
           </AppBar>

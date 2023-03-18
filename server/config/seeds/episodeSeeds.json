@@ -1,42 +1,12 @@
 [
   {
-    "title": "Episode 1",
-    "description": "Episode 1 description",
-    "audio": "https://res.cloudinary.com/ryanmcc/video/upload/v1637340167/my_folder/x7cqzaqbxm50shrdgxhq.mp3",
-    "duration": 60,
-    "season": 1,
-    "episode": 1
-  },
-  {
-    "title": "Episode 2",
-    "description": "Episode 2 description",
-    "audio": "https://res.cloudinary.com/ryanmcc/video/upload/v1637340167/my_folder/x7cqzaqbxm50shrdgxhq.mp3",
-    "duration": 60,
-    "season": 1,
-    "episode": 2
-  },
-  {
-    "title": "Spooky",
-    "description": "Spooky description",
-    "audio": "https://res.cloudinary.com/ryanmcc/video/upload/v1637340167/my_folder/x7cqzaqbxm50shrdgxhq.mp3",
-    "duration": 60,
-    "season": 1,
-    "episode": 12
-  },
-  {
-    "title": "Episode Episode",
-    "description": "Episode Episode description",
-    "audio": "https://res.cloudinary.com/ryanmcc/video/upload/v1637340167/my_folder/x7cqzaqbxm50shrdgxhq.mp3",
-    "duration": 60,
-    "season": 1,
-    "episode": 4
-  },
-  {
-    "title": "Horse",
-    "description": "Horse description",
-    "audio": "https://res.cloudinary.com/ryanmcc/video/upload/v1637340167/my_folder/x7cqzaqbxm50shrdgxhq.mp3",
-    "duration": 60,
-    "season": 5,
-    "episode": 11
+    "title": "ep. 20 W",
+    "description": "This week Michael and Brad discuss the album  and . See how Michael reacts to a ridiculous song about New York featuring Vampire Weekend’s Ezra Koenig, Brad to a song that is so overplayed it’s triggering and much much more.",
+    "michaelWYF": "Sound & Color - Alabama Shakes",
+    "bradWYF": "Wonder Where We Land - SBTRKT",
+    "michaelArt": "https://images.squarespace-cdn.com/content/v1/5e1f5be8dd2f6a5b56553f92/1615439064332-AED1P9PU8OPTAGPENJJ1/alabama.jpg?format=1500w",
+    "bradArt": "https://images.squarespace-cdn.com/content/v1/5e1f5be8dd2f6a5b56553f92/1615439204985-C702X42ZPMD477YH57QA/sbtrkt.jpg?format=1500w",
+    "widget": "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/episode/52StiadPDk3njHvOEwzoOL?utm_source=generator&theme=0\" width=\"100%\" height=\"232\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>",
+    "episode": 20
   }
 ]

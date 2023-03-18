@@ -6,9 +6,7 @@ const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 
-// require("dotenv").config({ path: "./.env" });
-
-const proxy = require("http-proxy-middleware");
+require("dotenv").config({ path: "./.env" });
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -18,6 +16,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
+server.applyMiddleware({ app });
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));

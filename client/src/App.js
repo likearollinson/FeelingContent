@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PodCentralProvider } from "./utils/GlobalState";
+// import { PodCentralProvider } from "./utils/GlobalState";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,13 +16,14 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import Auth from "./utils/auth";
+// import Auth from "./utils/auth";
 
 import GlobalAppBar from "./components/GlobalAppBar";
 
 import Home from "./pages/Home";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
+import Episodes from "./pages/Episodes";
 // import Signup from "./pages/Signup";
 // import Profile from "./pages/Profile";
 // import Publish from "./pages/Publish";
@@ -68,6 +69,7 @@ function App() {
           <GlobalAppBar />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/episodes" component={Episodes} />
             <Route exact path="/admin" component={Login} />
             {/* <Route exact path="/signup" component={Signup} /> */}
             {/* {Auth.loggedIn() ? (

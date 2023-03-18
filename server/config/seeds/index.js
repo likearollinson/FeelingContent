@@ -1,13 +1,11 @@
 const db = require("../connection");
-const { User, Podcast, Episode } = require("../../models");
+const { User, Episode } = require("../../models");
 const userData = require("./userSeeds.json");
 const episodeData = require("./episodeSeeds.json");
 
 db.once("open", async () => {
   await Episode.deleteMany();
   await User.deleteMany();
-
-  console.log("podcasts seeded");
 
   await User.create(userData);
 

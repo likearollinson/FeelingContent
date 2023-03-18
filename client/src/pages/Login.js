@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-function Login(props) {
+const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
@@ -46,7 +46,7 @@ function Login(props) {
         alignItems="center"
         justifyContent="center"
         backgroundColor=""
-        // sx={{ border: 1 }}
+      // sx={{ border: 1 }}
       >
         <Box
           flexGrow={1}
