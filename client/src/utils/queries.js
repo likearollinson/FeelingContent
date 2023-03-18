@@ -33,20 +33,18 @@ export const GET_ME = gql`
   }
 `;
 
-export const QUERY_ALL_PODCASTS = gql`
+export const QUERY_ALL_EPISODES = gql`
   {
-    podcasts {
+    episodes {
       _id
       title
       description
-      image
-      episodes {
-        title
-        description
-        audio
-        season
-        episode
-      }
+      michaelWYF
+      bradWYF
+      bradArt
+      michaelArt
+      widget
+      episode
     }
   }
 `;

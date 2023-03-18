@@ -1,41 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grow from '@mui/material/Grow';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import homeImage from '../assets/michaelbrad.JPG';
 
-import { QUERY_SINGLE_EPISODE } from '../utils/queries'
-
-const styles = {
-  homeImage: {
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '100%',
-  },
-  lowerImage: {
-    display: 'block',
-    width: '150px',
-  },
-};
-
+import { QUERY_ALL_EPISODES } from '../utils/queries'
 
 const Episodes = () => {
-  const { _id } = useParams();
+  // const { _id } = useParams();
   // console.log("param: ", _id)
-  const { loading, data } = useQuery(QUERY_SINGLE_EPISODE, {
-    variables: { _id: _id },
-  });
-  const episodeData = data?.episode || [];
-  console.log("episodeData:", episodeData);
-  const episodeArr = Object.values(episodeData);
-  console.log(episodeArr)
+  const { loading, error, data } = useQuery(QUERY_ALL_EPISODES);
+
+  if (loading) {
+    return (
+      <Box flexGrow={1} sx={{ bgcolor: '#f0eeeb', height: '100vh' }} >
+        <Typography
+          variant="h2"
+          component="div"
+          align="center"
+          pt={20}
+          sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
+        >
+          LOADING...
+        </Typography>
+      </Box>
+    )
+  };
+  if (error) {
+    return (
+      <Box flexGrow={1} sx={{ bgcolor: '#f0eeeb', height: '100vh' }} >
+        <Typography
+          variant="h2"
+          component="div"
+          align="center"
+          pt={20}
+          sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
+
+        >
+          ERROR
+        </Typography>
+      </Box>
+    )
+  }
 
   // const title = podcastArr[2];
   // const description = podcastArr[3];
@@ -59,6 +67,26 @@ const Episodes = () => {
           Episodes
         </Typography>
       </Grow>
+      {data?.episodes?.length > 0 ?
+        <div>
+          {data.episodes.map((episode) => (
+            <div key={episode._id}>
+              <h2>{episode.title}</h2>
+              <p>{episode.description}</p>
+              {/* Render other fields as needed */}
+            </div>
+          ))}
+        </div>
+        :
+        <Typography
+          variant="p"
+          component="div"
+          align="center"
+          sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
+        >
+          No episodes found.
+        </Typography>
+      }
     </Box>
   );
 }
