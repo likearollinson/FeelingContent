@@ -41,11 +41,13 @@ import Episodes from "./pages/Episodes";
 //   };
 // });
 
+require("dotenv").config({ path: "./../.env" });
+
 const client = new ApolloClient({
-  uri: 'http://localhost:3001/graphql',
+  uri: process.env.REACT_APP_GRAPHQL_URI,
   cache: new InMemoryCache(),
 });
-
+console.log('DotEnv - ' + process.env.REACT_APP_GRAPHQL_URI)
 document.body.style = "background-color: #f0eeeb";
 
 function App() {

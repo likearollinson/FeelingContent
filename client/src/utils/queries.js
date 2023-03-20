@@ -44,7 +44,7 @@ export const QUERY_ALL_EPISODES = gql`
       bradArt
       michaelArt
       widget
-      episode
+      episodeNumber
     }
   }
 `;

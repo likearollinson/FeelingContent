@@ -17,7 +17,8 @@ const typeDefs = gql`
     bradArt: String
     michaelArt: String
     widget: String
-    episode: Int
+    episodeNumber: Int
+    createdAt: String
     comments: [Comment]
   }
 

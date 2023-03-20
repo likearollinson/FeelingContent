@@ -26,7 +26,7 @@ const episodeSchema = new Schema({
   widget: {
     type: String,
   },
-  episode: {
+  episodeNumber: {
     type: Number,
   },
   createdAt: {

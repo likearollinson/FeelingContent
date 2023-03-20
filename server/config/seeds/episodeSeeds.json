@@ -1,13 +1,13 @@
 [
   {
     "title": "ep. 20 Wonder Where We Shake",
-    "description": "This week Michael and Brad discuss the album  and . See how Michael reacts to a ridiculous song about New York featuring Vampire Weekend’s Ezra Koenig, Brad to a song that is so overplayed it’s triggering and much much more.",
+    "description": "This week Michael and Brad discuss the album  and see how Michael reacts to a ridiculous song about New York featuring Vampire Weekend’s Ezra Koenig, Brad to a song that is so overplayed it’s triggering and much much more.",
     "michaelWYF": "Sound & Color - Alabama Shakes",
     "bradWYF": "Wonder Where We Land - SBTRKT",
     "michaelArt": "https://images.squarespace-cdn.com/content/v1/5e1f5be8dd2f6a5b56553f92/1615439064332-AED1P9PU8OPTAGPENJJ1/alabama.jpg?format=1500w",
     "bradArt": "https://images.squarespace-cdn.com/content/v1/5e1f5be8dd2f6a5b56553f92/1615439204985-C702X42ZPMD477YH57QA/sbtrkt.jpg?format=1500w",
-    "widget": "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/episode/52StiadPDk3njHvOEwzoOL?utm_source=generator&theme=0\" width=\"100%\" height=\"232\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>",
-    "episode": 20
+    "widget": "https://open.spotify.com/episode/4MrXR8vye6FhdyIXRGrcsJ?si=f28528a9abe94a4b",
+    "episodeNumber": 20
   },
   {
     "title": "2021 Feelies",
@@ -16,7 +16,7 @@
     "bradWYF": "Blonde - Frank Ocean",
     "michaelArt": "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/3/11/1426099817173/f1efb3f4-9a6d-4f78-8ca8-594ab646d198-bestSizeAvailable.jpeg?width=620&quality=45&dpr=2&s=none",
     "bradArt": "https://lomabeat.com/wp-content/uploads/2021/06/22Blonde22-album-cover.-Image-from-genius.com_..png",
-    "widget": "<iframe style='border-radius:12px' src='https://open.spotify.com/embed/episode/4MrXR8vye6FhdyIXRGrcsJ?utm_source=generator' width='100%' height='352' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>",
-    "episode": 21
+    "widget": "https://open.spotify.com/episode/52StiadPDk3njHvOEwzoOL?si=a1c582cc1fa14e24",
+    "episodeNumber": 21
   }
 ]
