@@ -149,6 +149,21 @@ const Episodes = () => {
                     {...{ timeout: 2000 }}
                     in={true}
                   >
+                    <Typography
+                      fontFamily="Oswald"
+                      variant="p"
+                      component="h7"
+                      align="center"
+                      sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
+                    >
+                      {episode.bradWYF}
+                    </Typography>
+                  </Grow>
+                  <Grow
+                    style={{ transformOrigin: "0 0 0" }}
+                    {...{ timeout: 2000 }}
+                    in={true}
+                  >
                     <img src={episode.bradArt} alt="Brad's what ya feelin' album art" width="185" />
                   </Grow>
                 </Grid>
@@ -165,6 +180,21 @@ const Episodes = () => {
                       sx={{ fontWeight: 'bold', flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
                     >
                       Michael's What Ya Feelin
+                    </Typography>
+                  </Grow>
+                  <Grow
+                    style={{ transformOrigin: "0 0 0" }}
+                    {...{ timeout: 2000 }}
+                    in={true}
+                  >
+                    <Typography
+                      fontFamily="Oswald"
+                      variant="p"
+                      component="h7"
+                      align="center"
+                      sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
+                    >
+                      {episode.michaelWYF}
                     </Typography>
                   </Grow>
                   <Grow
