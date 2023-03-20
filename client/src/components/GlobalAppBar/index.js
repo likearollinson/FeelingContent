@@ -68,35 +68,52 @@ const GlobalAppBar = (props) => {
     },
   });
 
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const useMatchMedia = (mediaQuery, initialValue) => {
-    const [isMatching, setIsMatching] = useState(initialValue)
-    useEffect(() => {
-      const watcher = window.matchMedia(mediaQuery)
-      setIsMatching(watcher.matches)
-      const listener = (matches) => {
-        setIsMatching(matches.matches)
-      }
-      if (watcher.addEventListener) {
-        watcher.addEventListener('change', listener)
-      } else {
-        watcher.addListener(listener)
-      }
-      return () => {
-        if (watcher.removeEventListener) {
-          return watcher.removeEventListener('change', listener)
-        } else {
-          return watcher.removeListener(listener)
-        }
-      }
-    }, [mediaQuery])
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
-    return isMatching
-  }
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-  const isDesktopResolution = useMatchMedia('(min-width:450px)', true)
-  const isMobileResolution = useMatchMedia('(max-width:449px)', true)
-  // if (Auth.loggedIn()) {
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  // const useMatchMedia = (mediaQuery, initialValue) => {
+  //   const [isMatching, setIsMatching] = useState(initialValue)
+  //   useEffect(() => {
+  //     const watcher = window.matchMedia(mediaQuery)
+  //     setIsMatching(watcher.matches)
+  //     const listener = (matches) => {
+  //       setIsMatching(matches.matches)
+  //     }
+  //     if (watcher.addEventListener) {
+  //       watcher.addEventListener('change', listener)
+  //     } else {
+  //       watcher.addListener(listener)
+  //     }
+  //     return () => {
+  //       if (watcher.removeEventListener) {
+  //         return watcher.removeEventListener('change', listener)
+  //       } else {
+  //         return watcher.removeListener(listener)
+  //       }
+  //     }
+  //   }, [mediaQuery])
+
+  //   return isMatching
+  // }
+
+  // const isDesktopResolution = useMatchMedia('(min-width:450px)', true)
+  // const isMobileResolution = useMatchMedia('(max-width:449px)', true)
+  // // if (Auth.loggedIn()) {
   return (
     <React.Fragment>
       <CssBaseline />
@@ -114,7 +131,47 @@ const GlobalAppBar = (props) => {
               >
                 <Grid>
                   <Button
-                    size="medium"
+                    size="small"
+                    component={Link}
+                    color="inherit"
+                    to="/episodes"
+                  // sx={{ display: { xs: 'none', sm: 'block' } }}
+                  >
+                    Episodes
+                  </Button>
+                  <Button
+                    size="small"
+                    component={Link}
+                    color="inherit"
+                    to="/whatyafeelin"
+                  // sx={{ display: { xs: 'none', sm: 'block' } }}
+                  >
+                    What Ya Feelin'?
+                  </Button>
+                </Grid>
+                {/* {isDesktopResolution && ( */}
+                {/* )}
+                {isDesktopResolution && ( */}
+                {/* )}
+                {isMobileResolution && (
+                <Grid>
+                  <IconButton
+                    size="large"
+                    edge="start"
+                    color="error"
+                    aria-label="menu"
+                    sx={{ mr: 2 }}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                </Grid>
+                )} */}
+                <Grid item sx={{ display: "flex", flexDirection: "row" }} justify="flex-end" alignItems="center">
+                  <Grid sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <a href="/" ><img src={logo} alt='feeling content logo' style={styles.logo} /></a>
+                  </Grid>
+                  <Button
+                    size="large"
                     component={Link}
                     color="inherit"
                     to="/"
@@ -122,44 +179,6 @@ const GlobalAppBar = (props) => {
                     Feeling Content
                   </Button>
                 </Grid>
-                {isDesktopResolution && (
-                  <Grid>
-                    <img src={logo} alt='feeling content logo' style={styles.logo} />
-                  </Grid>
-                )}
-                {isDesktopResolution && (
-                  <Grid>
-                    <Button
-                      size="small"
-                      component={Link}
-                      color="inherit"
-                      to="/episodes"
-                    >
-                      Episodes
-                    </Button>
-                    <Button
-                      size="small"
-                      component={Link}
-                      color="inherit"
-                      to="/whatyafeelin"
-                    >
-                      What Ya Feelin'?
-                    </Button>
-                  </Grid>
-                )}
-                {isMobileResolution && (
-                  <Grid>
-                    <IconButton
-                      size="large"
-                      edge="start"
-                      color="error"
-                      aria-label="menu"
-                      sx={{ mr: 2 }}
-                    >
-                      <MenuIcon />
-                    </IconButton>
-                  </Grid>
-                )}
               </Grid>
             </Toolbar>
           </AppBar>

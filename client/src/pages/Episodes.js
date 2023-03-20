@@ -2,7 +2,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grow from '@mui/material/Grow';
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link'
 import { Spotify } from 'react-spotify-embed';
 import { useQuery } from "@apollo/client";
 
@@ -62,13 +63,14 @@ const Episodes = () => {
       >
         <Typography
           fontFamily="Oswald"
+          fontWeight="bold"
           variant="p"
           component="h1"
           pt={10}
           sx={{ flexGrow: 1, display: { xs: "block", sm: "block" }, mb: 5 }}
           align="center"
         >
-          Episodes
+          E P I S O D E S
         </Typography>
       </Grow>
       {data?.episodes?.length > 0 ?
@@ -85,12 +87,29 @@ const Episodes = () => {
                   variant="p"
                   component="h3"
                   align="center"
-                  sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
+                  sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, mb: 1 }}
                 >
                   {episode.title}
                 </Typography>
               </Grow>
-              <Box sx={{ m: 2 }}>
+              <Grow
+                style={{ transformOrigin: "0 0 0" }}
+                {...{ timeout: 2000 }}
+                in={true}
+              >
+                <Typography
+                  fontFamily="Oswald"
+                  variant="p"
+                  component="h3"
+                  align="center"
+                  sx={{ flexGrow: 1, display: { xs: 'block', sm: 'none' }, mb: 1 }}
+                >
+                  <Link href={episode.widget} target="_blank" sx={{ color: 'black' }}>
+                    {episode.title}
+                  </Link>
+                </Typography>
+              </Grow>
+              <Box sx={{ m: 2, display: { xs: 'none', sm: 'block' } }}>
                 <Spotify wide link={episode.widget} />
               </Box>
               <Grow
