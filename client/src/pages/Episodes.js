@@ -49,7 +49,6 @@ const Episodes = () => {
       </Box>
     )
   }
-
   // const title = podcastArr[2];
   // const description = podcastArr[3];
   // const image = podcastArr[4];
@@ -74,7 +73,7 @@ const Episodes = () => {
         </Typography>
       </Grow>
       {data?.episodes?.length > 0 ?
-        <Box>
+        <Box sx={{ display: { md: 'block', lg: 'none' } }}>
           {Object.values(data.episodes).reverse().map((episode) => (
             <Box key={episode._id}>
               <Grow
@@ -112,21 +111,19 @@ const Episodes = () => {
               <Box sx={{ m: 2, display: { xs: 'none', sm: 'block' } }}>
                 <Spotify wide link={episode.widget} />
               </Box>
-              <Grow
-                style={{ transformOrigin: "0 0 0" }}
-                {...{ timeout: 2000 }}
-                in={true}
-              >
-                <Typography
-                  fontFamily="Oswald"
-                  variant="p"
-                  component="p"
-                  align="center"
-                  sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1, ml: 2, mr: 2 }}
-                >
-                  {episode.description}
-                </Typography>
-              </Grow>
+              <div>
+                {episode.description.split("\n").map((i, key) => {
+                  return <Grow
+                    style={{ transformOrigin: "0 0 0" }}
+                    {...{ timeout: 2000 }}
+                    in={true}
+                  >
+                    <Grid item justifyContent="center" align="center">
+                      <p key={key}>{i}</p>
+                    </Grid>
+                  </Grow>;
+                })}
+              </div>
               <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={12} sm={6} md={6} lg={6} xl={6} flexDirection="column" justifyContent="center" align="center">
                   <Grow
@@ -144,21 +141,19 @@ const Episodes = () => {
                       Brad's What Ya Feelin
                     </Typography>
                   </Grow>
-                  <Grow
-                    style={{ transformOrigin: "0 0 0" }}
-                    {...{ timeout: 2000 }}
-                    in={true}
-                  >
-                    <Typography
-                      fontFamily="Oswald"
-                      variant="p"
-                      component="h7"
-                      align="center"
-                      sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
-                    >
-                      {episode.bradWYF}
-                    </Typography>
-                  </Grow>
+                  <div>
+                    {episode.bradWYF.split("\n").map((i, key) => {
+                      return <Grow
+                        style={{ transformOrigin: "0 0 0" }}
+                        {...{ timeout: 2000 }}
+                        in={true}
+                      >
+                        <Grid item justifyContent="center" align="center">
+                          <h7 key={key}>{i}</h7>
+                        </Grid>
+                      </Grow>;
+                    })}
+                  </div>
                   <Grow
                     style={{ transformOrigin: "0 0 0" }}
                     {...{ timeout: 2000 }}
@@ -182,28 +177,25 @@ const Episodes = () => {
                       Michael's What Ya Feelin
                     </Typography>
                   </Grow>
-                  <Grow
-                    style={{ transformOrigin: "0 0 0" }}
-                    {...{ timeout: 2000 }}
-                    in={true}
-                  >
-                    <Typography
-                      fontFamily="Oswald"
-                      variant="p"
-                      component="h7"
-                      align="center"
-                      sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
-                    >
-                      {episode.michaelWYF}
-                    </Typography>
-                  </Grow>
+                  <div>
+                    {episode.michaelWYF.split("\n").map((i, key) => {
+                      return <Grow
+                        style={{ transformOrigin: "0 0 0" }}
+                        {...{ timeout: 2000 }}
+                        in={true}
+                      >
+                        <Grid item justifyContent="center" align="center">
+                          <h7 sx={{ align: "center" }} key={key}>{i}</h7>
+                        </Grid>
+                      </Grow>;
+                    })}
+                  </div>
                   <Grow
                     style={{ transformOrigin: "0 0 0" }}
                     {...{ timeout: 2000 }}
                     in={true}
                   >
                     <img src={episode.michaelArt} alt="Michael's what ya feelin' album art" width="185" />
-
                   </Grow>
                 </Grid>
               </Grid>
@@ -221,7 +213,136 @@ const Episodes = () => {
           No episodes found.
         </Typography>
       }
-    </Box >
+      <Box sx={{ mb: 2, ml: 15, mr: 15, display: { md: 'none', lg: 'block' } }}>
+        {Object.values(data.episodes).reverse().map((episode) => (
+          <Box key={episode._id}>
+            <Grow
+              style={{ transformOrigin: "0 0 0" }}
+              {...{ timeout: 2000 }}
+              in={true}
+            >
+              <Typography
+                fontFamily="Oswald"
+                variant="p"
+                component="h3"
+                align="center"
+                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, mb: 1 }}
+              >
+                {episode.title}
+              </Typography>
+            </Grow>
+            <Grow
+              style={{ transformOrigin: "0 0 0" }}
+              {...{ timeout: 2000 }}
+              in={true}
+            >
+              <Typography
+                fontFamily="Oswald"
+                variant="p"
+                component="h3"
+                align="center"
+                sx={{ flexGrow: 1, display: { xs: 'block', sm: 'none' }, mb: 1 }}
+              >
+                <Link href={episode.widget} target="_blank" sx={{ color: 'black' }}>
+                  {episode.title}
+                </Link>
+              </Typography>
+            </Grow>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Spotify wide link={episode.widget} />
+            </Box>
+            <div>
+              {episode.description.split("\n").map((i, key) => {
+                return <Grow
+                  style={{ transformOrigin: "0 0 0" }}
+                  {...{ timeout: 2000 }}
+                  in={true}
+                >
+                  <Grid item justifyContent="center" align="center">
+                    <p key={key}>{i}</p>
+                  </Grid>
+                </Grow>;
+              })}
+            </div>
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              <Grid item xs={12} sm={6} md={6} lg={6} xl={6} flexDirection="column" justifyContent="center" align="center">
+                <Grow
+                  style={{ transformOrigin: "0 0 0" }}
+                  {...{ timeout: 2000 }}
+                  in={true}
+                >
+                  <Typography
+                    fontFamily="Oswald"
+                    variant="p"
+                    component="h6"
+                    align="center"
+                    sx={{ fontWeight: 'bold', flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
+                  >
+                    Brad's What Ya Feelin
+                  </Typography>
+                </Grow>
+                <div>
+                  {episode.bradWYF.split("\n").map((i, key) => {
+                    return <Grow
+                      style={{ transformOrigin: "0 0 0" }}
+                      {...{ timeout: 2000 }}
+                      in={true}
+                    >
+                      <Grid item justifyContent="center" align="center">
+                        <h7 key={key}>{i}</h7>
+                      </Grid>
+                    </Grow>;
+                  })}
+                </div>
+                <Grow
+                  style={{ transformOrigin: "0 0 0" }}
+                  {...{ timeout: 2000 }}
+                  in={true}
+                >
+                  <img src={episode.bradArt} alt="Brad's what ya feelin' album art" width="185" />
+                </Grow>
+              </Grid>
+              <Grid item xs={12} sm={6} md={6} lg={6} xl={6} flexDirection="column" justifyContent="center" align="center">
+                <Grow
+                  style={{ transformOrigin: "0 0 0" }}
+                  {...{ timeout: 2000 }}
+                  in={true}
+                >
+                  <Typography
+                    fontFamily="Oswald"
+                    variant="p"
+                    component="h6"
+                    sx={{ fontWeight: 'bold', flexGrow: 1, display: { xs: 'block', sm: 'block' }, mb: 1 }}
+                  >
+                    Michael's What Ya Feelin
+                  </Typography>
+                </Grow>
+                <div>
+                  {episode.michaelWYF.split("\n").map((i, key) => {
+                    return <Grow
+                      style={{ transformOrigin: "0 0 0" }}
+                      {...{ timeout: 2000 }}
+                      in={true}
+                    >
+                      <Grid item justifyContent="center" align="center">
+                        <h7 sx={{ align: "center" }} key={key}>{i}</h7>
+                      </Grid>
+                    </Grow>;
+                  })}
+                </div>
+                <Grow
+                  style={{ transformOrigin: "0 0 0" }}
+                  {...{ timeout: 2000 }}
+                  in={true}
+                >
+                  <img src={episode.michaelArt} alt="Michael's what ya feelin' album art" width="185" />
+                </Grow>
+              </Grid>
+            </Grid>
+          </Box>
+        ))}
+      </Box>
+    </Box>
   );
 }
 

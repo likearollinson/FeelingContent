@@ -1,11 +1,11 @@
 [
   {
     "title": "ep. 1 Pilot - Top Ten Albums 2010s",
-    "description": "Welcome to the first episode of Feeling Content!\\nYou might notice that things are a bit out of order, but don’t you worry! We had to make some adjustments to get older episodes online, so please excuse anything out of place.\\nMichael and Brad Discuss their top albums of the 2010s.\\n\\nMichael\\n\\n10. Kacey Musgraves - Golden Hour\\n\\n9. Tame Impala - Currents\\n\\n8. Lana Del Rey - Norman F*****g Rockwell\\n\\n7. Kevin Morby - Oh my god\\n\\n6. Big K.R.I.T. - 4eva is a Mighty Long Time\\n\\n5. Mac Miller - Swimming\\n\\n4. John Mayer - Born and Raised\\n\\n3. Kendrick Lamar - Damn\\n\\n2. the 1975 - I Like It When You Sleep, for You Are So Beautiful yet So Unaware of It\\n\\n1. The War on Drugs - Lost in the Dream\\n\\nBrad\\n\\n10. Jeff Rosenstock - WORRY.\\n\\n9. Taylor Swift - Red\\n\\n8. Vampire Weekend - Father of the Bride\\n\\n7. The National - High Viole\\n\\n6. Tyler the Creator - Flower Boy\\n\\n5. Kendrick Lamar - Good Kid M.a.a.d. City\\n\\n4. Lana Del Rey - Norman F*****g Rockwell\\n\\n3. Kanye West - The Life of Pablo\\n\\n2. Kacey Musgraves - Golden Hour\\n\\n1. Sufjan Stevens - Carrie and Lowell - Live",
+    "description": "Welcome to the first episode of Feeling Content!\nYou might notice that things are a bit out of order, but don’t you worry! We had to make some adjustments to get older episodes online, so please excuse anything out of place.\nMichael and Brad Discuss their top albums of the 2010s.\n\nMichael\n\n10. Kacey Musgraves - Golden Hour\n\n9. Tame Impala - Currents\n\n8. Lana Del Rey - Norman F*****g Rockwell\n\n7. Kevin Morby - Oh my god\n\n6. Big K.R.I.T. - 4eva is a Mighty Long Time\n\n5. Mac Miller - Swimming\n\n4. John Mayer - Born and Raised\n\n3. Kendrick Lamar - Damn\n\n2. the 1975 - I Like It When You Sleep, for You Are So Beautiful yet So Unaware of It\n\n1. The War on Drugs - Lost in the Dream\n\nBrad\n\n10. Jeff Rosenstock - WORRY.\n\n9. Taylor Swift - Red\n\n8. Vampire Weekend - Father of the Bride\n\n7. The National - High Viole\n\n6. Tyler the Creator - Flower Boy\n\n5. Kendrick Lamar - Good Kid M.a.a.d. City\n\n4. Lana Del Rey - Norman F*****g Rockwell\n\n3. Kanye West - The Life of Pablo\n\n2. Kacey Musgraves - Golden Hour\n\n1. Sufjan Stevens - Carrie and Lowell - Live",
     "michaelWYF": "N/A",
     "bradWYF": "N/A",
-    "michaelArt": "../assets/FeelingContent.png",
-    "bradArt": "../assets/FeelingContent.png",
+    "michaelArt": "./FeelingContent.png",
+    "bradArt": "./FeelingContent.png",
     "widget": "https://open.spotify.com/episode/4a6LmU6wE5ZaN5JMJE6gPm?si=NcnD7sL3RLe2QNW6CNxB_w",
     "episodeNumber": 1
   },
@@ -14,8 +14,8 @@
     "description": "On the second episode of Feeling Content, Brad creates an elaborate plan to convince Michael to finally start liking the Grateful Dead.",
     "michaelWYF": "N/A",
     "bradWYF": "N/A",
-    "michaelArt": "./client/src/assets/FeelingContent.png",
-    "bradArt": "./client/src/assets/FeelingContent.png",
+    "michaelArt": "./FeelingContent.png",
+    "bradArt": "./FeelingContent.png",
     "widget": "https://open.spotify.com/episode/3MObWEkUrLTooOvMxXEDq1?si=e35880c683124808",
     "episodeNumber": 2
   },
@@ -24,8 +24,8 @@
     "description": "Listen in to part two of two of Feeling Content’s Grateful Dead episode. Brad has worked hard to create a “syllabus” of Grateful Dead material to convince Michael and the listener to like the Dead. Will he convince Michael? Will he convince you? Listen to part one and then this episode to find out!",
     "michaelWYF": "N/A",
     "bradWYF": "N/A",
-    "michaelArt": "../assets/FeelingContent.png",
-    "bradArt": "../assets/FeelingContent.png",
+    "michaelArt": "./FeelingContent.png",
+    "bradArt": "./FeelingContent.png",
     "widget": "https://open.spotify.com/episode/3u56Y2igB9T3aouZDW4zyj?si=01rgNYuUTciCHeZBl9Cr4w",
     "episodeNumber": 3
   },
@@ -134,8 +134,8 @@
     "description": "Michael and Brad bring on a special guest to discuss some music outside of their normal realm, Reggaeton. In this episode the special guest, Andrew, introduces and discusses with the duo the album Aura by popular latin/reggaeton artist Ozuna.",
     "michaelWYF": "N/A",
     "bradWYF": "N/A",
-    "michaelArt": "../assets/FeelingContent.png",
-    "bradArt": "../assets/FeelingContent.png",
+    "michaelArt": "./FeelingContent.png",
+    "bradArt": "./FeelingContent.png",
     "widget": "https://open.spotify.com/episode/3cQugnHSSgmKav2yUD9Sqc?si=GLoPF-mhQQuXXMDSjGSMjQ",
     "episodeNumber": 15
   },
@@ -152,8 +152,8 @@
   {
     "title": "2020 Feelies",
     "description": "Michael and Brad host their award episode for the albums of 2020. With creative categories, listen and find out which albums Michael and Brad listened to and decided were the best of the best. Below is a link to a playlist sampling the winners and a link to our website. Enjoy!",
-    "michaelWYF": "BEST ALBUM\\nSaint Cloud - Waxahatchee",
-    "bradWYF": "BEST WORKOUT ALBUM\\nNO DREAM - Jeff Rosenstock",
+    "michaelWYF": "BEST ALBUM\nSaint Cloud - Waxahatchee",
+    "bradWYF": "BEST WORKOUT ALBUM\nNO DREAM - Jeff Rosenstock",
     "michaelArt": "https://media.pitchfork.com/photos/5e726f3a5138f7000805348d/1:1/Saint%20Cloud_Waxahatchee.jpg",
     "bradArt": "https://media.pitchfork.com/photos/5ec6b12a1a4e85635f12e54d/1:1/NO%20DREAM_Jeff%20Rosenstock.jpg",
     "widget": "https://open.spotify.com/episode/7KcPj1TP21KH4aWK0GyvWD?si=3daa71514e0347bf",
