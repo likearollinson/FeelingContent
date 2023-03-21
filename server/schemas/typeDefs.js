@@ -29,6 +29,26 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type WhatYaFeelin {
+    _id: ID
+    episodeNumber: Int
+    michaelWYF: String
+    bradWYF: String
+    bradArt: String
+    michaelArt: String
+    michaelWidget: String
+    bradWidget: String
+    michaelMichaelReview: String
+    michaelBradReview: String
+    bradMichaelReview: String
+    bradBradReview: String
+    michaelMichaelCups: String
+    michaelBradCups: String
+    bradMichaelCups: String
+    bradBradCups: String
+    createdAt: String
+  }
+
   type Auth {
     token: ID
     user: User
@@ -37,8 +57,8 @@ const typeDefs = gql`
   input episodeInput {
     title: String!
     description: String!
-    audio: String
-    episode: Int
+    widget: String
+    episodeNumber: Int
     season: Int
   }
 
@@ -56,6 +76,7 @@ const typeDefs = gql`
     episode(_id: ID): Episode
     episodes: [Episode]
     addedEpisode: Episode
+    whatYaFeelin(episodeNumber: Int!): WhatYaFeelin
   }
 
   type Mutation {

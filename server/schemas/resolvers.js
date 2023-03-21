@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Episode } = require("../models");
+const { User, Episode, WhatYaFeelin } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -70,6 +70,36 @@ const resolvers = {
         throw new AuthenticationError("You are not logged in.");
       }
       return await Episode.findOne({ _id: user.addedEpisode });
+    },
+    whatYaFeelin: async (parent, { episodeNumber }, context) => {
+      // Fetch the episode data from the first data source
+      const episodeData = await Episode.findOne({ episodeNumber });
+
+      // Fetch the WhatYaFeelin data from the second data source
+      const whatYaFeelinData = await WhatYaFeelin.findOne({ episodeNumber });
+
+      // Combine the two data sets into a single WhatYaFeelin object
+      const whatYaFeelinObject = {
+        episodeNumber: episodeData.episodeNumber,
+        michaelWYF: episodeData.michaelWYF,
+        bradWYF: episodeData.bradWYF,
+        bradArt: episodeData.bradArt,
+        michaelArt: episodeData.michaelArt,
+        michaelWidget: whatYaFeelinData.michaelWidget,
+        bradWidget: whatYaFeelinData.bradWidget,
+        michaelMichaelReview: whatYaFeelinData.michaelMichaelReview,
+        michaelBradReview: whatYaFeelinData.michaelBradReview,
+        bradMichaelReview: whatYaFeelinData.bradMichaelReview,
+        bradBradReview: whatYaFeelinData.bradBradReview,
+        michaelMichaelCups: whatYaFeelinData.michaelMichaelCups,
+        michaelBradCups: whatYaFeelinData.michaelBradCups,
+        bradMichaelCups: whatYaFeelinData.bradMichaelCups,
+        bradBradCups: whatYaFeelinData.bradBradCups,
+        createdAt: whatYaFeelinData.createdAt,
+      };
+
+      // Return the combined WhatYaFeelin object
+      return whatYaFeelinObject;
     },
   },
 
